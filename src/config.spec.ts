@@ -364,35 +364,35 @@ describe("配置校验 · 装备那一段的 17 个错误码都要报得出来",
     {
       code: "EQUIP_TEMPLATE_SET",
       level: "error",
-      mutate: (c) => (c.equipment.templates[0].setId = "ghost"),
+      mutate: (c) => (c.equipment.templates[0]!.setId = "ghost"),
     },
     {
       code: "EQUIP_AFFIX_SLOT",
       level: "error",
-      mutate: (c) => (c.equipment.affixes[0].slots = ["ghost"]),
+      mutate: (c) => (c.equipment.affixes[0]!.slots = ["ghost"]),
     },
     {
       code: "EQUIP_AFFIX_RANGE",
       level: "error",
       mutate: (c) => {
-        c.equipment.affixes[0].min = 5;
-        c.equipment.affixes[0].max = 1;
+        c.equipment.affixes[0]!.min = 5;
+        c.equipment.affixes[0]!.max = 1;
       },
     },
     {
       code: "EQUIP_AFFIX_WEIGHT",
       level: "warning",
-      mutate: (c) => (c.equipment.affixes[0].weight = 0),
+      mutate: (c) => (c.equipment.affixes[0]!.weight = 0),
     },
     {
       code: "EQUIP_QUALITY_AFFIX_RANGE",
       level: "error",
-      mutate: (c) => (c.equipment.qualities[0].affixes = [2, 0]),
+      mutate: (c) => (c.equipment.qualities[0]!.affixes = [2, 0]),
     },
     {
       code: "EQUIP_QUALITY_WEIGHT",
       level: "warning",
-      mutate: (c) => (c.equipment.qualities[0].weight = 0),
+      mutate: (c) => (c.equipment.qualities[0]!.weight = 0),
     },
     {
       code: "EQUIP_TIER_SLOT_GAP",
